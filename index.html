@@ -1,275 +1,962 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Abhishek Dubey | SEO Portfolio</title>
     <link href="./src/output.css" rel="stylesheet" />
+    <title>Abhishek T. Dubey — SEO Executive</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "deep-blue": "#0E21A0",
+              purple: "#4D2DB7",
+              lavender: "#9D44C0",
+              pink: "#F075AA",
+              bg: "#07051c",
+              card: "#0d0a2a",
+              card2: "#130f38",
+            },
+            fontFamily: {
+              mono: ['"Fira Code"', "monospace"],
+              serif: ['"Instrument Serif"', "serif"],
+              sans: ["Syne", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=Fira+Code:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Grid texture — one unavoidable pseudo-element */
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(157, 68, 192, 0.1) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(157, 68, 192, 0.1) 1px, transparent 1px);
+        background-size: 48px 48px;
+        pointer-events: none;
+        z-index: 0;
+      }
+      /* Fade-up animation */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(24px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .fade-up {
+        animation: fadeUp 0.7s ease both;
+      }
+      .delay-1 {
+        animation-delay: 0.12s;
+      }
+      .delay-2 {
+        animation-delay: 0.26s;
+      }
+      .delay-3 {
+        animation-delay: 0.4s;
+      }
+      /* Section divider line */
+      .sec-label::after {
+        content: "";
+        display: inline-block;
+        flex: 1;
+        height: 1px;
+        background: rgba(157, 68, 192, 0.22);
+      }
+    </style>
   </head>
 
-  <body class="h-auto bg-amber-50">
-    <!-- HEADER -->
-    <header>
-      <nav
-        class="fixed top-0 left-0 w-full flex flex-wrap justify-between bg-[#F96E5B]"
+  <body class="bg-bg text-[#f0ecff] font-mono overflow-x-hidden">
+    <!-- ───────────── NAV ───────────── -->
+    <nav
+      class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-12 py-4 bg-[rgba(7,5,28,0.85)] backdrop-blur-lg border-b border-[rgba(157,68,192,0.22)]"
+    >
+      <span
+        class="font-sans font-extrabold text-[13px] tracking-[3px] uppercase text-pink"
+        >Abhishek</span
       >
-        <header>
-          <h1 class="text- bg-[#f28d80] p-2 m-1 rounded-3xl">
-            Abhishek T. Dubey
-          </h1>
-          <!-- <p>
-            SEO Executive | Technical SEO | Data-Driven Strategy | AI-Assisted
-            Optimization
-          </p> -->
-        </header>
-        <ul class="flex flex-wrap justify-between gap-2">
-          <li class="bg-[#f28d80] p-2 m-1 rounded-2xl">
-            <a href="#about" class="text-sm">About</a>
-          </li>
-          <li class="bg-[#f28d80] p-2 m-1 rounded-2xl">
-            <a href="#experience-projects" class="text-sm">Work</a>
-          </li>
-          <li class="bg-[#f28d80] p-2 m-1 rounded-2xl">
-            <a href="#skills" class="text-sm">Skills</a>
-          </li>
-          <li class="bg-[#f28d80] p-2 m-1 rounded-2xl">
-            <a href="#experience" class="text-sm">Experience</a>
-          </li>
-          <li class="bg-[#f28d80] p-2 m-1 rounded-2xl">
-            <a href="#contact" class="text-sm">Contact</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+      <ul class="hidden md:flex gap-8 list-none">
+        <li>
+          <a
+            href="#about"
+            class="font-mono text-[11px] tracking-widest uppercase text-[#f0ecff]/40 hover:text-pink hover:opacity-100 transition-colors no-underline"
+            >About</a
+          >
+        </li>
+        <li>
+          <a
+            href="#skills"
+            class="font-mono text-[11px] tracking-widest uppercase text-[#f0ecff]/40 hover:text-pink hover:opacity-100 transition-colors no-underline"
+            >Skills</a
+          >
+        </li>
+        <li>
+          <a
+            href="#experience"
+            class="font-mono text-[11px] tracking-widest uppercase text-[#f0ecff]/40 hover:text-pink hover:opacity-100 transition-colors no-underline"
+            >Experience</a
+          >
+        </li>
+        <li>
+          <a
+            href="#projects"
+            class="font-mono text-[11px] tracking-widest uppercase text-[#f0ecff]/40 hover:text-pink hover:opacity-100 transition-colors no-underline"
+            >Projects</a
+          >
+        </li>
+        <li>
+          <a
+            href="#contact"
+            class="font-mono text-[11px] tracking-widest uppercase text-[#f0ecff]/40 hover:text-pink hover:opacity-100 transition-colors no-underline"
+            >Contact</a
+          >
+        </li>
+      </ul>
+    </nav>
 
-    <main>
-      <!-- HERO / INTRO -->
-      <section id="about" class="mt-12 lg:mt-13">
-        <article>
-          <p>
-            I’m Abhishek Dubey, an SEO professional based in Thane, Maharashtra.
-            I improve search visibility, website structure, and organic traffic
-            using keyword research, technical optimization, and content
-            strategy.
-          </p>
-        </article>
+    <!-- ───────────── HERO ───────────── -->
+    <section
+      class="relative min-h-screen flex flex-col justify-end px-12 pb-20 pt-28"
+    >
+      <!-- Glow orbs -->
+      <div
+        class="absolute right-[8%] top-[25%] w-80 h-80 rounded-full pointer-events-none"
+        style="
+          background: radial-gradient(
+            circle,
+            rgba(77, 45, 183, 0.22) 0%,
+            transparent 70%
+          );
+        "
+      ></div>
+      <div
+        class="absolute right-[18%] top-[50%] w-48 h-48 rounded-full pointer-events-none"
+        style="
+          background: radial-gradient(
+            circle,
+            rgba(240, 117, 170, 0.12) 0%,
+            transparent 70%
+          );
+        "
+      ></div>
 
-        <article>
-          <p>
-            I’ve worked on multiple SEO projects across agencies and startups,
-            contributing to 300%+ organic traffic growth through keyword gap
-            analysis, site architecture, and data-driven content planning.
-          </p>
-        </article>
-      </section>
-
-      <!-- HOW I WORK -->
-      <section id="workflow">
-        <header>
-          <h2>How I Work</h2>
-          <p>My workflow focuses on structured execution:</p>
-        </header>
-
-        <ul>
-          <li>Identify keyword opportunities through research tools</li>
-          <li>Map keywords based on search intent and clustering</li>
-          <li>Improve technical SEO for crawlability and indexing</li>
-          <li>Build content strategies aligned with ranking opportunities</li>
-          <li>Track performance and continuously improve rankings</li>
-        </ul>
-
-        <p>
-          Tools I use regularly include
-          <span>Google Analytics</span>, <span>Google Search Console</span>,
-          <span>Semrush</span>, <span>Surfer SEO</span>,
-          <span>Screaming Frog</span>, and <span>WordPress</span>.
-        </p>
-      </section>
-
-      <!-- WORK + PROJECTS -->
-      <section id="experience-projects">
-        <!-- CLIENTS -->
-        <section id="work-clients">
-          <header>
-            <h2>Work Clients</h2>
-          </header>
-
-          <ul>
-            <li><strong>Content Whale</strong> – Managed SEO projects</li>
-            <li>
-              <strong>Arthlete Fit</strong> – SEO growth & technical
-              optimization
-            </li>
-            <li>
-              <strong>Testriq QA Lab LLP</strong> – Technical SEO & optimization
-            </li>
-          </ul>
-        </section>
-
-        <!-- PROJECTS -->
-        <section id="key-projects">
-          <header>
-            <h2>Key Projects</h2>
-          </header>
-
-          <article>
-            <h3>Digital BoostHub</h3>
-            <p>
-              Personal portfolio applying SEO techniques like on-page
-              optimization, internal linking, indexing, and content structuring.
-            </p>
-          </article>
-
-          <article>
-            <h3>SEO Strategy Demo – ConvertEdge Tech</h3>
-            <ul>
-              <li>Complete website audit</li>
-              <li>Keyword mapping</li>
-              <li>AEO / GEO strategy</li>
-              <li>Content execution framework</li>
-            </ul>
-          </article>
-
-          <article>
-            <h3>Keyword Geo Ranking Checker</h3>
-            <p>
-              Automation workflow using n8n to track keyword rankings across
-              geographic locations.
-            </p>
-          </article>
-
-          <article>
-            <h3>Website Index Status Checker</h3>
-            <p>Automation tool to verify search engine indexing of URLs.</p>
-          </article>
-
-          <article>
-            <h3>JOBFIT AI</h3>
-            <p>
-              Streamlit app ranking candidates based on resume-job similarity
-              using NLP and ML.
-            </p>
-          </article>
-        </section>
-      </section>
-
-      <!-- SKILLS -->
-      <section id="skills">
-        <header>
-          <h2>Skills</h2>
-        </header>
-
-        <section>
-          <h3>SEO & Optimization</h3>
-          <ul>
-            <li>Technical SEO</li>
-            <li>On-Page SEO</li>
-            <li>Off-Page SEO</li>
-            <li>SEO Audits</li>
-            <li>Keyword Research</li>
-            <li>Keyword Gap Analysis</li>
-            <li>Backlink Strategy</li>
-            <li>Internal Linking</li>
-            <li>Meta Tag Optimization</li>
-          </ul>
-        </section>
-
-        <section>
-          <h3>Tools & Platforms</h3>
-          <ul>
-            <li>Google Analytics</li>
-            <li>Google Search Console</li>
-            <li>Semrush</li>
-            <li>Surfer SEO</li>
-            <li>Screaming Frog</li>
-            <li>WordPress</li>
-            <li>Ahrefs</li>
-            <li>Canva</li>
-            <li>Notion</li>
-          </ul>
-        </section>
-
-        <section>
-          <h3>Automation & AI</h3>
-          <ul>
-            <li>n8n Workflow Automation</li>
-            <li>SEO Data Tracking Automation</li>
-            <li>Prompt Engineering</li>
-            <li>AI Tools for SEO</li>
-          </ul>
-        </section>
-
-        <section>
-          <h3>Marketing & Content</h3>
-          <ul>
-            <li>Blog Writing</li>
-            <li>Content Marketing</li>
-            <li>Guest Posting</li>
-            <li>Social Media Campaigns</li>
-            <li>Digital Marketing Strategy</li>
-          </ul>
-        </section>
-      </section>
-
-      <!-- EXPERIENCE -->
-      <section id="experience">
-        <header>
-          <h2>Experience</h2>
-        </header>
-
-        <article>
-          <h3>SEO Executive Intern</h3>
-          <p><strong>Content Whale</strong></p>
-          <time>Dec 2025 – Present</time>
-
-          <h4>What I Did</h4>
-          <ul>
-            <li>Contributed to 300%+ organic traffic growth</li>
-            <li>Created keyword clusters & content calendars</li>
-            <li>Conducted SEO audits</li>
-          </ul>
-        </article>
-
-        <article>
-          <h3>SEO Analyst – Arthlete Fit</h3>
-          <time>Jul 2025 – Present</time>
-        </article>
-
-        <article>
-          <h3>SEO Analyst – Testriq QA Lab LLP</h3>
-          <time>Jul 2025 – Sep 2025</time>
-        </article>
-      </section>
-
-      <!-- CONTACT -->
-      <section id="contact">
-        <header>
-          <h2>Contact</h2>
-        </header>
-
-        <address>
-          <ul>
-            <li>
-              Email:
-              <a href="mailto:abhishekow25@gmail.com">abhishekow25@gmail.com</a>
-            </li>
-            <li>Phone: <a href="tel:+9184509">+91 84509</a></li>
-            <li>
-              LinkedIn:
-              <a href="https://linkedin.com" target="_blank">Profile</a>
-            </li>
-            <li>Location: Thane, Maharashtra, India</li>
-          </ul>
-        </address>
-      </section>
-    </main>
-
-    <!-- FOOTER -->
-    <footer>
-      <p>
-        © 2026 Abhishek Dubey | SEO Executive | Technical SEO | Organic Growth
-        Strategy
+      <p
+        class="fade-up font-mono text-[11px] tracking-[3px] uppercase text-pink mb-5"
+      >
+        Based in Thane, Maharashtra · Open to Opportunities
       </p>
+
+      <h1
+        class="fade-up delay-1 font-serif leading-[0.92] text-[#f0ecff] mb-7"
+        style="font-size: clamp(56px, 8vw, 118px)"
+      >
+        Abhishek<br />
+        <em class="italic text-lavender">T. Dubey</em>
+      </h1>
+
+      <p
+        class="fade-up delay-2 font-sans font-medium text-[13px] tracking-wide text-[#f0ecff]/50 max-w-xl leading-relaxed mb-12"
+      >
+        Helping businesses grow organic traffic through structured keyword
+        research, technical SEO improvements, and search-intent driven content
+        strategies.
+      </p>
+
+      <div class="fade-up delay-3 flex flex-wrap gap-3">
+        <span
+          class="font-mono text-[10px] tracking-widest uppercase px-4 py-2 border border-pink/30 text-pink rounded-sm hover:bg-pink hover:text-bg transition-colors cursor-default"
+          >Technical SEO</span
+        >
+        <span
+          class="font-mono text-[10px] tracking-widest uppercase px-4 py-2 border border-pink/30 text-pink rounded-sm hover:bg-pink hover:text-bg transition-colors cursor-default"
+          >Keyword Research</span
+        >
+        <span
+          class="font-mono text-[10px] tracking-widest uppercase px-4 py-2 border border-pink/30 text-pink rounded-sm hover:bg-pink hover:text-bg transition-colors cursor-default"
+          >Data-Driven Strategy</span
+        >
+        <span
+          class="font-mono text-[10px] tracking-widest uppercase px-4 py-2 border border-pink/30 text-pink rounded-sm hover:bg-pink hover:text-bg transition-colors cursor-default"
+          >AI-Assisted Optimization</span
+        >
+        <span
+          class="font-mono text-[10px] tracking-widest uppercase px-4 py-2 border border-pink/30 text-pink rounded-sm hover:bg-pink hover:text-bg transition-colors cursor-default"
+          >n8n Automation</span
+        >
+      </div>
+
+      <!-- Ghost counter -->
+      <!-- <span
+        class="absolute right-12 bottom-16 font-serif text-[130px] leading-none text-purple/10 select-none pointer-events-none"
+        >300%</span
+      > -->
+    </section>
+
+    <!-- ───────────── ABOUT ───────────── -->
+    <section id="about" class="relative z-10 px-12 py-24">
+      <p
+        class="sec-label flex items-center gap-4 font-mono text-[20px] text-opacity-70 tracking-[3px] uppercase text-lavender mb-12"
+      >
+        01 — About
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+        <!-- Left -->
+        <div>
+          <h2
+            class="font-serif leading-tight mb-12"
+            style="font-size: clamp(36px, 5vw, 64px)"
+          >
+            Where &amp;<br /><em class="italic text-lavender">What</em>
+          </h2>
+          <p class="font-mono text-[13px] leading-loose text-[#f0ecff]/50">
+            I'm Abhishek Dubey, an SEO professional based in Thane, Maharashtra.
+            I work on improving search visibility, website structure, and
+            organic traffic through practical SEO strategies that combine
+            keyword research, technical optimization, and content planning.
+            <br /><br />
+            I have worked on multiple SEO projects across agencies and startups
+            where my strategies contributed to 300%+ collective organic traffic
+            growth through keyword gap analysis, site architecture planning, and
+            data-driven content strategies.
+            <br /><br />
+            I also build small automation systems using n8n to reduce repetitive
+            SEO tasks like ranking checks and indexing audits.
+            <br /><br />
+            Tools I use regularly: Google Analytics · Search Console · Semrush ·
+            Surfer SEO · Screaming Frog · WordPress.
+          </p>
+        </div>
+
+        <!-- Right -->
+        <div>
+          <!-- Stats -->
+          <div class="border-l-2 border-purple pl-6 mb-8">
+            <div class="font-serif text-[52px] text-lavender leading-none">
+              300%+
+            </div>
+            <div
+              class="font-mono text-[11px] tracking-widest uppercase text-[#f0ecff]/50 mt-1"
+            >
+              Collective organic traffic growth
+            </div>
+          </div>
+          <div class="border-l-2 border-purple pl-6 mb-10">
+            <div class="font-serif text-[52px] text-lavender leading-none">
+              100
+            </div>
+            <div
+              class="font-mono text-[11px] tracking-widest uppercase text-[#f0ecff]/50 mt-1"
+            >
+              PageSpeed Insights score achieved
+            </div>
+          </div>
+
+          <p
+            class="sec-label flex items-center gap-4 font-mono text-[20px] text-opacity-70 tracking-[3px] uppercase text-lavender mb-6"
+          >
+            How I Work
+          </p>
+          <ul class="list-none space-y-0 text-[15px]">
+            <li
+              class="flex gap-4 items-start font-mono text-[#f0ecff]/80 py-3 border-b border-[rgba(157,68,192,0.10)]"
+            >
+              <span class="font-serif text-xl text-pink w-7 leading-none"
+                >1</span
+              >Identify keyword opportunities through research tools
+            </li>
+            <li
+              class="flex gap-4 items-start font-mono text-[#f0ecff]/80 py-3 border-b border-[rgba(157,68,192,0.10)]"
+            >
+              <span class="font-serif text-xl text-pink w-7 leading-none"
+                >2</span
+              >Map keywords based on search intent and clusters
+            </li>
+            <li
+              class="flex gap-4 items-start font-mono text-[#f0ecff]/80 py-3 border-b border-[rgba(157,68,192,0.10)]"
+            >
+              <span class="font-serif text-xl text-pink w-7 leading-none"
+                >3</span
+              >Improve technical SEO for crawlability and indexing
+            </li>
+            <li
+              class="flex gap-4 items-start font-mono text-[#f0ecff]/80 py-3 border-b border-[rgba(157,68,192,0.10)]"
+            >
+              <span class="font-serif text-xl text-pink w-7 leading-none"
+                >4</span
+              >Build content strategies aligned with ranking opportunities
+            </li>
+            <li class="flex gap-4 items-start font-mono text-[#f0ecff]/80 py-3">
+              <span class="font-serif text-xl text-pink w-7 leading-none"
+                >5</span
+              >Track performance and continuously improve rankings
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────── SKILLS ───────────── -->
+    <section id="skills" class="relative z-10 px-12 pb-24">
+      <p
+        class="sec-label flex items-center gap-4 font-mono text-[20px] text-opacity-70 tracking-[3px] uppercase text-lavender mb-12"
+      >
+        02 — Skills
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-2 ">
+        <!-- SEO -->
+        <div
+          class="relative bg-card hover:bg-card2 transition-colors p-9 overflow-hidden group rounded-3xl"
+        >
+          <span
+            class="absolute right-6 top-5 font-serif text-[72px] text-lavender/5 leading-none pointer-events-none select-none"
+            >01</span
+          >
+          <p
+            class="font-sans font-bold text-[12px] tracking-[2px] uppercase text-lavender mb-5"
+          >
+            SEO &amp; Optimization
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="font-mono text-[11px] px-3 py-1 bg-purple/15 border border-purple/30 rounded-sm"
+              >Technical SEO</span
+            >
+            <span
+              class="font-mono text-[11px] px-3 py-1 bg-purple/15 border border-purple/30 rounded-sm"
+              >On-Page SEO</span
+            >
+            <span
+              class="font-mono text-[11px] px-3 py-1 bg-purple/15 border border-purple/30 rounded-sm"
+              >Off-Page SEO</span
+            >
+            <span
+              class="font-mono text-[11px] px-3 py-1 bg-purple/15 border border-purple/30 rounded-sm"
+              >SEO Audits</span
+            >
+            <span
+              class="font-mono text-[11px] px-3 py-1 bg-purple/15 border border-purple/30 rounded-sm"
+              >Keyword Research</span
+            >
+            <span
+              class="font-mono text-[11px] px-3 py-1 bg-purple/15 border border-purple/30 rounded-sm"
+              >Keyword Gap Analysis</span
+            >
+            <span
+              class="font-mono text-[11px] px-3 py-1 bg-purple/15 border border-purple/30 rounded-sm"
+              >Backlink Strategy</span
+            >
+            <span
+              class="font-mono text-[11px] px-3 py-1 bg-purple/15 border border-purple/30 rounded-sm"
+              >Internal Linking</span
+            >
+            <span
+              class="font-mono text-[11px] px-3 py-1 bg-purple/15 border border-purple/30 rounded-sm"
+              >Meta Tag Optimization</span
+            >
+            <span
+              class="font-mono text-[11px] px-3 py-1 bg-purple/15 border border-purple/30 rounded-sm"
+              >Site Architecture</span
+            >
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div
+          class="relative bg-card hover:bg-card2 transition-colors p-9 overflow-hidden rounded-3xl"
+        >
+          <span
+            class="absolute right-6 top-5 font-serif text-[72px] text-lavender/5 leading-none pointer-events-none select-none"
+            >02</span
+          >
+          <p
+            class="font-sans font-bold text-[12px] tracking-[2px] uppercase text-lavender mb-5"
+          >
+            Tools &amp; Platforms
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="font-mono text-[11px] px-3 py-1 bg-purple/15 border border-purple/30 rounded-sm"
+              >Google Analytics</span
+            >
+            <span
+              class="font-mono text-[11px] px-3 py-1 bg-purple/15 border border-purple/30 rounded-sm"
+              >Search Console</span
+            >
+            <span
+              class="font-mono text-[11px] px-3 py-1 bg-purple/15 border border-purple/30 rounded-sm"
+              >Semrush</span
+            >
+            <span
+              class="font-mono text-[11px] px-3 py-1 bg-purple/15 border border-purple/30 rounded-sm"
+              >Surfer SEO</span
+            >
+            <span
+              class="font-mono text-[11px] px-3 py-1 bg-purple/15 border border-purple/30 rounded-sm"
+              >Screaming Frog</span
+            >
+            <span
+              class="font-mono text-[11px] px-3 py-1 bg-purple/15 border border-purple/30 rounded-sm"
+              >WordPress</span
+            >
+            <span
+              class="font-mono text-[11px] px-3 py-1 bg-purple/15 border border-purple/30 rounded-sm"
+              >Ahrefs</span
+            >
+            <span
+              class="font-mono text-[11px] px-3 py-1 bg-purple/15 border border-purple/30 rounded-sm"
+              >Canva</span
+            >
+            <span
+              class="font-mono text-[11px] px-3 py-1 bg-purple/15 border border-purple/30 rounded-sm"
+              >Notion</span
+            >
+          </div>
+        </div>
+
+        <!-- Automation -->
+        <div
+          class="relative bg-card hover:bg-card2 transition-colors p-9 overflow-hidden rounded-3xl"
+        >
+          <span
+            class="absolute right-6 top-5 font-serif text-[72px] text-lavender/5 leading-none pointer-events-none select-none"
+            >03</span
+          >
+          <p
+            class="font-sans font-bold text-[12px] tracking-[2px] uppercase text-lavender mb-5"
+          >
+            Automation &amp; AI
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="font-mono text-[11px] px-3 py-1 bg-purple/15 border border-purple/30 rounded-sm"
+              >n8n Workflow Automation</span
+            >
+            <span
+              class="font-mono text-[11px] px-3 py-1 bg-purple/15 border border-purple/30 rounded-sm"
+              >SEO Data Tracking</span
+            >
+            <span
+              class="font-mono text-[11px] px-3 py-1 bg-purple/15 border border-purple/30 rounded-sm"
+              >Prompt Engineering</span
+            >
+            <span
+              class="font-mono text-[11px] px-3 py-1 bg-purple/15 border border-purple/30 rounded-sm"
+              >AI Tools for SEO</span
+            >
+          </div>
+        </div>
+
+        <!-- Marketing -->
+        <div
+          class="relative bg-card hover:bg-card2 transition-colors p-9 overflow-hidden rounded-3xl"
+        >
+          <span
+            class="absolute right-6 top-5 font-serif text-[72px] text-lavender/5 leading-none pointer-events-none select-none"
+            >04</span
+          >
+          <p
+            class="font-sans font-bold text-[12px] tracking-[2px] uppercase text-lavender mb-5"
+          >
+            Marketing &amp; Content
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="font-mono text-[11px] px-3 py-1 bg-purple/15 border border-purple/30 rounded-sm"
+              >Blog Writing</span
+            >
+            <span
+              class="font-mono text-[11px] px-3 py-1 bg-purple/15 border border-purple/30 rounded-sm"
+              >Content Marketing</span
+            >
+            <span
+              class="font-mono text-[11px] px-3 py-1 bg-purple/15 border border-purple/30 rounded-sm"
+              >Guest Posting</span
+            >
+            <span
+              class="font-mono text-[11px] px-3 py-1 bg-purple/15 border border-purple/30 rounded-sm"
+              >Social Media Campaigns</span
+            >
+            <span
+              class="font-mono text-[11px] px-3 py-1 bg-purple/15 border border-purple/30 rounded-sm"
+              >Digital Marketing Strategy</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────── EXPERIENCE ───────────── -->
+    <section id="experience" class="relative z-10 px-12 pb-24">
+      <p
+        class="sec-label flex items-center gap-4 font-mono text-[20px] text-opacity-70 tracking-[3px] uppercase text-lavender mb-12"
+      >
+        03 — Experience
+      </p>
+
+      <!-- Content Whale -->
+      <div
+        class="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-12 py-12 border-t border-[rgba(157,68,192,0.22)]"
+      >
+        <div class="font-mono text-[11px] leading-loose text-[#f0ecff]/50">
+          <div class="font-sans font-bold text-[20px] text-pink mb-1">
+            Content Whale
+          </div>
+          <div>SEO Executive Intern</div>
+          <div>Dec 2025 – Present</div>
+        </div>
+        <div>
+          <h3 class="font-serif text-[28px] leading-tight mb-4">
+            SEO Executive <em class="italic text-lavender">Intern</em>
+          </h3>
+          <ul class="list-none space-y-0">
+            <li
+              class="flex gap-3 font-mono text-[12px] text-[#f0ecff]/50 py-2 border-b border-dashed border-lavender/10"
+            >
+              <span class="text-pink shrink-0">→</span>Worked on multiple client
+              projects contributing to 300%+ organic traffic growth
+            </li>
+            <li
+              class="flex gap-3 font-mono text-[12px] text-[#f0ecff]/50 py-2 border-b border-dashed border-lavender/10"
+            >
+              <span class="text-pink shrink-0">→</span>Created SEO mastersheets,
+              keyword clusters, and content calendars
+            </li>
+            <li
+              class="flex gap-3 font-mono text-[12px] text-[#f0ecff]/50 py-2 border-b border-dashed border-lavender/10"
+            >
+              <span class="text-pink shrink-0">→</span>Planned SEO blog
+              strategies based on search intent
+            </li>
+            <li
+              class="flex gap-3 font-mono text-[12px] text-[#f0ecff]/50 py-2 border-b border-dashed border-lavender/10"
+            >
+              <span class="text-pink shrink-0">→</span>Conducted SEO audits to
+              improve crawlability and rankings
+            </li>
+            <li
+              class="flex gap-3 font-mono text-[12px] text-[#f0ecff]/50 py-2 border-b border-dashed border-lavender/10"
+            >
+              <span class="text-pink shrink-0">→</span>Implemented on-page,
+              content, and technical SEO strategies
+            </li>
+            <li class="flex gap-3 font-mono text-[12px] text-[#f0ecff]/50 py-2">
+              <span class="text-pink shrink-0">→</span>Managing SEO strategies
+              across multiple client accounts simultaneously
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Arthlete Fit -->
+      <div
+        class="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-12 py-12 border-t border-[rgba(157,68,192,0.22)]"
+      >
+        <div class="font-mono text-[11px] leading-loose text-[#f0ecff]/50">
+          <div class="font-sans font-bold text-[20px] text-pink mb-1">
+            Arthlete Fit
+          </div>
+          <div>SEO Analyst</div>
+          <div>Jul 2025 – Present</div>
+        </div>
+        <div>
+          <h3 class="font-serif text-[28px] leading-tight mb-4">
+            SEO <em class="italic text-lavender">Analyst</em>
+          </h3>
+          <ul class="list-none space-y-0">
+            <li
+              class="flex gap-3 font-mono text-[12px] text-[#f0ecff]/50 py-2 border-b border-dashed border-lavender/10"
+            >
+              <span class="text-pink shrink-0">→</span>Led on-page SEO including
+              meta tags, internal linking, and site structure
+            </li>
+            <li
+              class="flex gap-3 font-mono text-[12px] text-[#f0ecff]/50 py-2 border-b border-dashed border-lavender/10"
+            >
+              <span class="text-pink shrink-0">→</span>Improved site
+              performance, crawlability, and Core Web Vitals
+            </li>
+            <li
+              class="flex gap-3 font-mono text-[12px] text-[#f0ecff]/50 py-2 border-b border-dashed border-lavender/10"
+            >
+              <span class="text-pink shrink-0">→</span>Developed blog and
+              backlink strategies to grow organic traffic
+            </li>
+            <li class="flex gap-3 font-mono text-[12px] text-[#f0ecff]/50 py-2">
+              <span class="text-pink shrink-0">→</span>Building SEO foundations
+              for early-stage startups
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Testriq -->
+      <div
+        class="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-12 py-12 border-t border-[rgba(157,68,192,0.22)]"
+      >
+        <div class="font-mono text-[11px] leading-loose text-[#f0ecff]/50">
+          <div class="font-sans font-bold text-[20px] text-pink mb-1">
+            Testriq QA Lab LLP
+          </div>
+          <div>SEO Analyst</div>
+          <div>Jul 2025 – Sep 2025</div>
+        </div>
+        <div>
+          <h3 class="font-serif text-[28px] leading-tight mb-4">
+            SEO <em class="italic text-lavender">Analyst</em>
+          </h3>
+          <ul class="list-none space-y-0">
+            <li
+              class="flex gap-3 font-mono text-[12px] text-[#f0ecff]/50 py-2 border-b border-dashed border-lavender/10"
+            >
+              <span class="text-pink shrink-0">→</span>Managed on-page and
+              off-page SEO for service pages
+            </li>
+            <li
+              class="flex gap-3 font-mono text-[12px] text-[#f0ecff]/50 py-2 border-b border-dashed border-lavender/10"
+            >
+              <span class="text-pink shrink-0">→</span>Conducted SEO audits and
+              optimized meta tags and internal links
+            </li>
+            <li class="flex gap-3 font-mono text-[12px] text-[#f0ecff]/50 py-2">
+              <span class="text-pink shrink-0">→</span>Achieved 100/100 SEO and
+              PageSpeed Insights score through technical optimization
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- College -->
+      <div
+        class="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-12 py-12 border-t border-[rgba(157,68,192,0.22)]"
+      >
+        <div class="font-mono text-[11px] leading-loose text-[#f0ecff]/50">
+          <div class="font-sans font-bold text-[20px] text-pink mb-1">
+            Guru Nanak Khalsa College
+          </div>
+          <div>Social Media Marketer</div>
+          <div>Apr 2025 – Oct 2025</div>
+        </div>
+        <div>
+          <h3 class="font-serif text-[28px] leading-tight mb-4">
+            Social Media <em class="italic text-lavender">Marketer</em>
+          </h3>
+          <ul class="list-none space-y-0">
+            <li
+              class="flex gap-3 font-mono text-[12px] text-[#f0ecff]/50 py-2 border-b border-dashed border-lavender/10"
+            >
+              <span class="text-pink shrink-0">→</span>Managed digital promotion
+              for student campaigns via Instagram and WhatsApp
+            </li>
+            <li class="flex gap-3 font-mono text-[12px] text-[#f0ecff]/50 py-2">
+              <span class="text-pink shrink-0">→</span>Improved engagement and
+              participation through targeted content
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- NGO -->
+      <div
+        class="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-12 py-12 border-t border-[rgba(157,68,192,0.22)]"
+      >
+        <div class="font-mono text-[11px] leading-loose text-[#f0ecff]/50">
+          <div class="font-sans font-bold text-[20px] text-pink mb-1">
+            Hamari Pahchaan NGO
+          </div>
+          <div>Social Entrepreneur</div>
+          <div>May 2025 – Jul 2025</div>
+        </div>
+        <div>
+          <h3 class="font-serif text-[28px] leading-tight mb-4">
+            Social <em class="italic text-lavender">Entrepreneur</em>
+          </h3>
+          <ul class="list-none space-y-0">
+            <li
+              class="flex gap-3 font-mono text-[12px] text-[#f0ecff]/50 py-2 border-b border-dashed border-lavender/10"
+            >
+              <span class="text-pink shrink-0">→</span>Worked on social media
+              campaigns supporting fundraising initiatives
+            </li>
+            <li class="flex gap-3 font-mono text-[12px] text-[#f0ecff]/50 py-2">
+              <span class="text-pink shrink-0">→</span>Focused on education and
+              women's safety causes
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────── PROJECTS ───────────── -->
+    <section id="projects" class="relative z-10 px-12 pb-24">
+      <p
+        class="sec-label flex items-center gap-4 font-mono text-[20px] text-opacity-70 tracking-[3px] uppercase text-lavender mb-12"
+      >
+        04 — Projects
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+        <div
+          class="group bg-card hover:bg-purple transition-colors p-9 cursor-default"
+        >
+          <div
+            class="font-serif text-[64px] text-purple/15 leading-none mb-6 group-hover:text-white/5 transition-colors"
+          >
+            01
+          </div>
+          <p
+            class="font-mono text-[15px] tracking-[2px] uppercase text-lavender mb-2 group-hover:text-pink transition-colors"
+          >
+            Live SEO Environment
+          </p>
+          <h4 class="font-sans font-bold text-base mb-3">Digital BoostHub</h4>
+          <p
+            class="font-mono text-[11px] leading-loose text-[#f0ecff]/50 group-hover:text-[#f0ecff]/80 transition-colors"
+          >
+            Personal portfolio website created to apply SEO techniques in a live
+            environment — on-page optimization, internal linking, indexing, and
+            content structure.
+          </p>
+        </div>
+
+        <div
+          class="group bg-card hover:bg-purple transition-colors p-9 cursor-default"
+        >
+          <div
+            class="font-serif text-[64px] text-purple/15 leading-none mb-6 group-hover:text-white/5 transition-colors"
+          >
+            02
+          </div>
+          <p
+            class="font-mono text-[15px] tracking-[2px] uppercase text-lavender mb-2 group-hover:text-pink transition-colors"
+          >
+            Full Strategy
+          </p>
+          <h4 class="font-sans font-bold text-base mb-3">
+            SEO Strategy Demo — ConvertEdge Tech
+          </h4>
+          <p
+            class="font-mono text-[11px] leading-loose text-[#f0ecff]/50 group-hover:text-[#f0ecff]/80 transition-colors"
+          >
+            Developed a complete SEO strategy: website audit, keyword mapping,
+            AEO / GEO strategy, and blog content execution framework.
+          </p>
+        </div>
+
+        <div
+          class="group bg-card hover:bg-purple transition-colors p-9 cursor-default"
+        >
+          <div
+            class="font-serif text-[64px] text-purple/15 leading-none mb-6 group-hover:text-white/5 transition-colors"
+          >
+            03
+          </div>
+          <p
+            class="font-mono text-[15px] tracking-[2px] uppercase text-lavender mb-2 group-hover:text-pink transition-colors"
+          >
+            n8n Automation
+          </p>
+          <h4 class="font-sans font-bold text-base mb-3">
+            Keyword Geo Ranking Checker
+          </h4>
+          <p
+            class="font-mono text-[11px] leading-loose text-[#f0ecff]/50 group-hover:text-[#f0ecff]/80 transition-colors"
+          >
+            Automation workflow that checks whether target keywords rank in
+            specific geographic locations, reducing manual tracking overhead.
+          </p>
+        </div>
+
+        <div
+          class="group bg-card hover:bg-purple transition-colors p-9 cursor-default"
+        >
+          <div
+            class="font-serif text-[64px] text-purple/15 leading-none mb-6 group-hover:text-white/5 transition-colors"
+          >
+            04
+          </div>
+          <p
+            class="font-mono text-[15px] tracking-[2px] uppercase text-lavender mb-2 group-hover:text-pink transition-colors"
+          >
+            n8n Automation
+          </p>
+          <h4 class="font-sans font-bold text-base mb-3">
+            Website Index Status Checker
+          </h4>
+          <p
+            class="font-mono text-[11px] leading-loose text-[#f0ecff]/50 group-hover:text-[#f0ecff]/80 transition-colors"
+          >
+            Automation workflow that verifies whether URLs are indexed in search
+            engines and outputs the indexing status automatically.
+          </p>
+        </div>
+
+        <div
+          class="group bg-card hover:bg-purple transition-colors p-9 cursor-default"
+        >
+          <div
+            class="font-serif text-[64px] text-purple/15 leading-none mb-6 group-hover:text-white/5 transition-colors"
+          >
+            05
+          </div>
+          <p
+            class="font-mono text-[15px] tracking-[2px] uppercase text-lavender mb-2 group-hover:text-pink transition-colors"
+          >
+            ML Application
+          </p>
+          <h4 class="font-sans font-bold text-base mb-3">JOBFIT AI</h4>
+          <p
+            class="font-mono text-[11px] leading-loose text-[#f0ecff]/50 group-hover:text-[#f0ecff]/80 transition-colors"
+          >
+            Streamlit web application that ranks candidates based on resume-job
+            description similarity using NLP and machine learning techniques.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────── CONTACT ───────────── -->
+    <section id="contact" class="relative z-10 px-12 pb-24">
+      <p
+        class="sec-label flex items-center gap-4 font-mono text-[20px] text-opacity-70 tracking-[3px] uppercase text-lavender mb-12"
+      >
+        05 — Contact
+      </p>
+
+      <h2
+        class="font-serif leading-tight mb-0"
+        style="font-size: clamp(36px, 5vw, 64px)"
+      >
+        Let's<br /><em class="italic text-lavender">Connect</em>
+      </h2>
+      <p
+        class="font-mono text-[12px] text-[#f0ecff]/50 mt-4 mb-12 max-w-md leading-loose"
+      >
+        Open to full-time SEO roles, freelance projects, and collaborations.
+      </p>
+
+      <div class="max-w-2xl">
+        <a
+          href="mailto:abhishekow25@gmail.com"
+          class="flex items-center gap-6 py-7 border-b border-[rgba(157,68,192,0.22)] no-underline text-inherit group"
+        >
+          <span
+            class="font-mono text-[15px] tracking-[2px] uppercase text-[#f0ecff]/40 w-24"
+            >Email :</span
+          >
+          <span
+            class="font-serif text-[22px] group-hover:text-pink transition-colors"
+            >abhishekow25@gmail.com</span
+          >
+        </a>
+        <a
+          href="tel:+918450958640"
+          class="flex items-center gap-6 py-7 border-b border-[rgba(157,68,192,0.22)] no-underline text-inherit group"
+        >
+          <span
+            class="font-mono text-[15px] tracking-[2px] uppercase text-[#f0ecff]/40 w-24"
+            >Phone :</span
+          >
+          <span
+            class="font-serif text-[22px] group-hover:text-pink transition-colors"
+            >+91 84509 58640</span
+          >
+        </a>
+        <a
+          href="https://linkedin.com/in/abhishek-dubey-27a273340"
+          target="_blank"
+          class="flex items-center gap-6 py-7 border-b border-[rgba(157,68,192,0.22)] no-underline text-inherit group"
+        >
+          <span
+            class="font-mono text-[15px] tracking-[2px] uppercase text-[#f0ecff]/40 w-24"
+            >LinkedIn:</span
+          >
+          <span
+            class="font-serif text-[22px] group-hover:text-pink transition-colors"
+            >abhishek-dubey-27a273340</span
+          >
+        </a>
+        <div
+          class="flex items-center gap-6 py-7 border-b border-[rgba(157,68,192,0.22)]"
+        >
+          <span
+            class="font-mono text-[15px] tracking-[2px] uppercase text-[#f0ecff]/40 w-24"
+            >Location:</span
+          >
+          <span class="font-serif text-[22px]">Thane, Maharashtra, India</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────── FOOTER ───────────── -->
+    <footer
+      class="bg-deep-blue px-12 py-1 flex flex-col md:flex-row justify-between items-end gap-2"
+    >
+      <div>
+        <div class="font-serif text-[30px] leading-tight text-[#f0ecff]">
+          Abhishek<br /><em class="italic text-pink">T. Dubey</em>
+        </div>
+        <p class="font-mono text-[11px] text-[#f0ecff]/35 mt-2 leading-loose">
+          SEO Executive · Technical SEO · Organic Growth Strategy
+        </p>
+      </div>
+      <div
+        class="text-right font-mono text-[11px] text-[#f0ecff]/40 leading-loose"
+      >
+        <p>© 2026 Abhishek Dubey</p>
+        <p>Thane, Maharashtra</p>
+      </div>
     </footer>
+
+    <script>
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", (e) => {
+          const t = document.querySelector(a.getAttribute("href"));
+          if (t) {
+            e.preventDefault();
+            t.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+
+      // Scroll-triggered fade-in
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.style.opacity = "1";
+              e.target.style.transform = "translateY(0)";
+            }
+          });
+        },
+        { threshold: 0.08 },
+      );
+
+      document
+        .querySelectorAll(
+          '.group, [class*="grid-cols-1"] > div, [class*="border-t"]',
+        )
+        .forEach((el) => {
+          el.style.opacity = "0";
+          el.style.transform = "translateY(20px)";
+          el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+          obs.observe(el);
+        });
+    </script>
   </body>
 </html>
